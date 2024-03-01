@@ -1,6 +1,4 @@
-= From Barriers to Solutions: Addressing Web Accessibility Issues
 
-This document dives deep into common web accessibility issues, illustrating each with examples from an inaccessible website, followed by solutions and their impact on making web content more accessible.
 
 == Non-Semantic HTML
 
@@ -71,6 +69,3 @@ Use `<button>` for clickable actions and ARIA roles or properties to inform scre
 === Impact:
 Improves the operability of web content for keyboard and screen reader users, making interactive elements usable and dynamic content changes perceivable.
 
-== Conclusion
-
-Addressing these issues not only complies with accessibility standards but significantly enhances the user experience for everyone. By implementing these solutions, web developers can transform inaccessible websites into inclusive platforms that welcome users of all abilities.
