@@ -1,1 +1,76 @@
-# web-accessibility
+= From Barriers to Solutions: Addressing Web Accessibility Issues
+
+This document dives deep into common web accessibility issues, illustrating each with examples from an inaccessible website, followed by solutions and their impact on making web content more accessible.
+
+== Non-Semantic HTML
+
+=== Problem:
+Using `<div>` elements for navigation links and clickable items instead of semantically appropriate `<nav>`, `<a>`, and `<button>` elements. This practice makes content less understandable to screen readers and other assistive technologies.
+
+=== Solution:
+Replace non-semantic `<div>` elements with semantic HTML:
+[source,html]
+----
+<nav>
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#events">Events</a>
+  <a href="#contact">Contact</a>
+</nav>
+<button onclick="showMoreInfo();">More Info</button>
+----
+
+=== Impact:
+Semantic HTML improves the document's structure, making it easier for assistive technologies to interpret and for users to navigate the content.
+
+== Improper Use of `tabindex`
+
+=== Problem:
+Arbitrary use of positive `tabindex` values disrupts the natural tab order, leading to a confusing and inaccessible navigation experience for keyboard users.
+
+=== Solution:
+Only use `tabindex="0"` to include elements in the natural keyboard tab order and `tabindex="-1"` for elements that need to be programmatically focused. Avoid positive `tabindex` values.
+
+=== Impact:
+Ensures a logical tab order that aligns with the visual layout, enhancing keyboard navigation for users with disabilities.
+
+== Poor Color Contrast
+
+=== Problem:
+Text and background colors with insufficient contrast make content difficult to read, especially for users with low vision or color blindness.
+
+=== Solution:
+Use high-contrast color combinations that meet or exceed WCAG AA standards, ensuring text is easily distinguishable from the background.
+
+=== Impact:
+Improves readability for all users, including those with visual impairments, by making content more perceivable.
+
+== Missing Alternative Text for Images
+
+=== Problem:
+Images without `alt` text are inaccessible to screen reader users, who miss out on the information conveyed by the images.
+
+=== Solution:
+Add descriptive `alt` text to all images:
+[source,html]
+----
+<img src="event-placeholder.jpg" alt="A collage representing various tech events">
+----
+
+=== Impact:
+Ensures that all users, including those using screen readers, can understand the content conveyed by images.
+
+== Inaccessible Navigation and Dynamic Content
+
+=== Problem:
+Clickable elements created with `<div>` and `<a href="#" onclick="...">` are not accessible by keyboard alone, and dynamic content changes are not announced to screen reader users.
+
+=== Solution:
+Use `<button>` for clickable actions and ARIA roles or properties to inform screen reader users of dynamic content changes. Ensure all interactive elements are focusable and accessible via keyboard.
+
+=== Impact:
+Improves the operability of web content for keyboard and screen reader users, making interactive elements usable and dynamic content changes perceivable.
+
+== Conclusion
+
+Addressing these issues not only complies with accessibility standards but significantly enhances the user experience for everyone. By implementing these solutions, web developers can transform inaccessible websites into inclusive platforms that welcome users of all abilities.
